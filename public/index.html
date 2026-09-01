@@ -1,190 +1,168 @@
+<!-- helix: public/index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="LandingPage5 — a modern marketing landing page that introduces our product, highlights key capabilities, and lets visitors get in touch.">
-    <meta name="theme-color" content="#0f172a">
-    <title>LandingPage5 — Ship Faster with Confidence</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/hero.css">
-    <link rel="stylesheet" href="styles/features.css">
-    <link rel="stylesheet" href="styles/contact-form.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="LandingPage5 — a modern marketing landing page showcasing product features, hero messaging, and a contact form." />
+    <title>LandingPage5 — Build Faster, Ship Smarter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/hero.css" />
+    <link rel="stylesheet" href="styles/features.css" />
+    <link rel="stylesheet" href="styles/contact-form.css" />
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="site-header" role="banner">
         <div class="container site-header__inner">
-            <a class="site-header__brand" href="#" aria-label="LandingPage5 home">
-                <span class="site-header__logo" aria-hidden="true"></span>
-                <span class="site-header__name">LandingPage5</span>
+            <a href="#" class="brand" aria-label="LandingPage5 home">
+                <span class="brand__mark" aria-hidden="true">◆</span>
+                <span class="brand__name">LandingPage5</span>
             </a>
-            <nav class="site-header__nav" aria-label="Primary">
+            <nav class="site-nav" aria-label="Primary">
                 <a href="#features">Features</a>
                 <a href="#contact">Contact</a>
-                <a class="site-header__cta" href="#contact">Get started</a>
             </nav>
         </div>
     </header>
 
     <main id="main">
-        <!-- ===================== HERO SECTION ===================== -->
-        <!-- @helix:story USER-77000 -->
-        <section class="hero" aria-labelledby="hero-title" role="region">
-            <div class="hero__backdrop" aria-hidden="true">
-                <div class="hero__orb hero__orb--one"></div>
-                <div class="hero__orb hero__orb--two"></div>
-                <div class="hero__orb hero__orb--three"></div>
-                <div class="hero__grid-overlay"></div>
+        <!-- @helix:story USER-77000 — Hero section -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero__bg" aria-hidden="true">
+                <div class="hero__glow hero__glow--a"></div>
+                <div class="hero__glow hero__glow--b"></div>
+                <div class="hero__grid"></div>
             </div>
-
             <div class="container hero__inner">
-                <p class="hero__eyebrow">
-                    <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-                    <span>New &middot; v5 release is live</span>
-                </p>
-
+                <p class="hero__eyebrow"><span class="hero__eyebrow-dot" aria-hidden="true"></span>New • Launching this quarter</p>
                 <h1 id="hero-title" class="hero__title">
-                    Ship landing pages that
-                    <span class="hero__title-accent">convert &amp; delight.</span>
+                    Build faster.<br />
+                    <span class="hero__title-accent">Ship smarter.</span>
                 </h1>
-
                 <p class="hero__subhead">
-                    A polished, conversion-focused marketing site starter with a hero, feature
-                    showcase, and accessible contact form &mdash; ready to deploy in minutes.
+                    LandingPage5 helps modern teams launch polished marketing sites in hours, not weeks — with accessible components, performance-first defaults, and zero build-step friction.
                 </p>
-
-                <div class="hero__actions">
-                    <a class="btn btn--primary" href="#contact" data-analytics="hero-cta-primary">
-                        Get started free
-                        <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                            <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a class="btn btn--secondary" href="#features" data-analytics="hero-cta-secondary">
-                        See features
-                    </a>
+                <div class="hero__cta">
+                    <a class="btn btn--primary" href="#contact">Start free trial</a>
+                    <a class="btn btn--ghost" href="#features">See features</a>
                 </div>
-
-                <ul class="hero__proof" aria-label="Why teams trust LandingPage5">
-                    <li class="hero__proof-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>No build step</span>
-                    </li>
-                    <li class="hero__proof-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Accessible by default</span>
-                    </li>
-                    <li class="hero__proof-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                            <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Mobile responsive</span>
-                    </li>
+                <ul class="hero__meta" aria-label="Highlights">
+                    <li><strong>4.9★</strong> rated by 1,200+ teams</li>
+                    <li><strong>14-day</strong> free trial</li>
+                    <li><strong>No</strong> credit card required</li>
                 </ul>
-
-                <div class="hero__visual" aria-hidden="true">
-                    <div class="hero__card hero__card--front">
-                        <div class="hero__card-bar">
-                            <span class="hero__card-dot hero__card-dot--red"></span>
-                            <span class="hero__card-dot hero__card-dot--amber"></span>
-                            <span class="hero__card-dot hero__card-dot--green"></span>
-                        </div>
-                        <div class="hero__card-body">
-                            <div class="hero__card-line hero__card-line--lg"></div>
-                            <div class="hero__card-line hero__card-line--md"></div>
-                            <div class="hero__card-line hero__card-line--sm"></div>
-                            <div class="hero__card-row">
-                                <div class="hero__chip"></div>
-                                <div class="hero__chip"></div>
-                                <div class="hero__chip"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero__card hero__card--back"></div>
-                </div>
             </div>
         </section>
 
-        <!-- ===================== FEATURES SECTION ===================== -->
+        <!-- @helix:story USER-754000 — Features section -->
         <section id="features" class="features" aria-labelledby="features-title">
-            <div class="container">
+            <div class="features__bg" aria-hidden="true">
+                <div class="features__orb features__orb--a"></div>
+                <div class="features__orb features__orb--b"></div>
+            </div>
+            <div class="container features__inner">
                 <header class="features__header">
-                    <p class="features__eyebrow">Why LandingPage5</p>
-                    <h2 id="features-title" class="features__title">Everything you need to launch</h2>
-                    <p class="features__lede">Three pillars that make this starter production-ready from day one.</p>
+                    <p class="features__eyebrow">Why teams choose LandingPage5</p>
+                    <h2 id="features-title" class="features__title">
+                        Everything you need to launch a page that converts
+                    </h2>
+                    <p class="features__lede">
+                        A focused toolkit of components, layouts, and styles — so your team spends time on messaging, not markup.
+                    </p>
                 </header>
+
                 <ul class="features__grid" role="list">
                     <li class="feature-card">
-                        <span class="feature-card__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                                <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
                             </svg>
-                        </span>
-                        <h3 class="feature-card__title">Blazing fast</h3>
-                        <p class="feature-card__desc">Static-first architecture with zero runtime dependencies. Loads instantly on any device.</p>
+                        </div>
+                        <h3 class="feature-card__title">Lightning fast</h3>
+                        <p class="feature-card__desc">
+                            Static-first architecture and lean assets keep load times under a second, so visitors stay engaged and search engines reward you.
+                        </p>
+                        <p class="feature-card__metric"><span>0.8s</span> median load time</p>
                     </li>
-                    <li class="feature-card">
-                        <span class="feature-card__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 22s8-4 8-12V5l-8-3-8 3v5c0 8 8 12 8 12z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+                    <li class="feature-card feature-card--accent">
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                <path d="M12 6a6 6 0 1 0 6 6" />
+                                <path d="M12 10a2 2 0 1 0 2 2" />
                             </svg>
-                        </span>
+                        </div>
                         <h3 class="feature-card__title">Accessible by default</h3>
-                        <p class="feature-card__desc">Semantic HTML, keyboard navigation, ARIA labels, and color contrast that meets WCAG AA.</p>
+                        <p class="feature-card__desc">
+                            Semantic HTML, keyboard navigation, focus rings, and ARIA-aware patterns ship with every section — so your page is inclusive from day one.
+                        </p>
+                        <p class="feature-card__metric"><span>WCAG</span> AA compliant</p>
                     </li>
+
                     <li class="feature-card">
-                        <span class="feature-card__icon" aria-hidden="true">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M4 4h16v16H4zM4 9h16M9 4v16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <div class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <path d="M14 17.5h7M17.5 14v7" />
                             </svg>
-                        </span>
-                        <h3 class="feature-card__title">Easy to customize</h3>
-                        <p class="feature-card__desc">A clear design-token system means swapping colors, fonts, and spacing is a one-file change.</p>
+                        </div>
+                        <h3 class="feature-card__title">Composable sections</h3>
+                        <p class="feature-card__desc">
+                            Hero, features, and contact form are independent slices — drop them in any order, restyle freely, and ship one piece at a time.
+                        </p>
+                        <p class="feature-card__metric"><span>3</span> ready-to-ship sections</p>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- ===================== CONTACT FORM SECTION ===================== -->
+        <!-- @helix:story USER-243000 — Contact form section -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container contact__inner">
-                <header class="contact__header">
+                <div class="contact__copy">
                     <p class="contact__eyebrow">Get in touch</p>
-                    <h2 id="contact-title" class="contact__title">Talk to the team</h2>
-                    <p class="contact__lede">Questions, feedback, or partnership ideas &mdash; send a note and we&rsquo;ll respond within one business day.</p>
-                </header>
+                    <h2 id="contact-title" class="contact__title">Let's build something great</h2>
+                    <p class="contact__lede">
+                        Have a question, a project idea, or feedback? Send a note and we'll get back within one business day.
+                    </p>
+                    <ul class="contact__points" role="list">
+                        <li>Reply within 24 hours</li>
+                        <li>No spam, ever</li>
+                        <li>Direct line to the team</li>
+                    </ul>
+                </div>
 
-                <form class="contact-form" id="contact-form" novalidate>
+                <form class="contact-form" novalidate aria-describedby="contact-form-status">
                     <div class="contact-form__row">
                         <label class="contact-form__field">
                             <span class="contact-form__label">Name</span>
-                            <input type="text" name="name" id="contact-name" required autocomplete="name" aria-describedby="contact-name-error" aria-invalid="false">
-                            <span class="contact-form__error" id="contact-name-error" role="alert" aria-live="polite"></span>
+                            <input class="contact-form__input" type="text" name="name" id="cf-name" autocomplete="name" required minlength="2" aria-describedby="cf-name-error" />
+                            <span class="contact-form__error" id="cf-name-error" role="alert" aria-live="polite"></span>
                         </label>
+
                         <label class="contact-form__field">
                             <span class="contact-form__label">Email</span>
-                            <input type="email" name="email" id="contact-email" required autocomplete="email" aria-describedby="contact-email-error" aria-invalid="false">
-                            <span class="contact-form__error" id="contact-email-error" role="alert" aria-live="polite"></span>
+                            <input class="contact-form__input" type="email" name="email" id="cf-email" autocomplete="email" required aria-describedby="cf-email-error" />
+                            <span class="contact-form__error" id="cf-email-error" role="alert" aria-live="polite"></span>
                         </label>
                     </div>
+
                     <label class="contact-form__field">
                         <span class="contact-form__label">Message</span>
-                        <textarea name="message" id="contact-message" rows="5" required aria-describedby="contact-message-error" aria-invalid="false"></textarea>
-                        <span class="contact-form__error" id="contact-message-error" role="alert" aria-live="polite"></span>
+                        <textarea class="contact-form__input contact-form__input--textarea" name="message" id="cf-message" rows="5" required minlength="10" aria-describedby="cf-message-error"></textarea>
+                        <span class="contact-form__error" id="cf-message-error" role="alert" aria-live="polite"></span>
                     </label>
+
                     <button type="submit" class="btn btn--primary contact-form__submit">Send message</button>
-                    <p class="contact-form__status" id="contact-status" role="status" aria-live="polite"></p>
+                    <p class="contact-form__status" id="contact-form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
@@ -192,10 +170,17 @@
 
     <footer class="site-footer" role="contentinfo">
         <div class="container site-footer__inner">
-            <p>&copy; <span id="footer-year">2025</span> LandingPage5. All rights reserved.</p>
+            <p>© <span id="year">2025</span> LandingPage5. Crafted with care.</p>
+            <nav aria-label="Footer">
+                <a href="#features">Features</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </footer>
 
     <script src="scripts/contact-form.js" defer></script>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
