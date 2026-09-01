@@ -22,72 +22,143 @@
             </a>
             <nav class="site-nav" aria-label="Primary">
                 <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a class="header-cta" href="#cta">Get started</a>
         </div>
     </header>
 
     <main id="main">
-        <!-- @helix:story USER-114000 — Hero section landing page -->
-        <section class="hero" id="top" aria-labelledby="hero-title">
+        <!-- Hero section (USER-87000) -->
+        <section class="hero" id="top">
             <div class="container hero-inner">
-                <span class="hero-eyebrow">
-                    <span class="dot" aria-hidden="true"></span>
-                    New: AI-powered workflows are here
-                </span>
-
-                <h1 class="hero-title" id="hero-title">
-                    Build something <span class="accent">remarkable</span>,<br />
-                    ship it in minutes.
-                </h1>
-
-                <p class="hero-subtitle">
-                    LandingPage5 is the fastest way to launch a polished, conversion-focused
-                    page. Beautiful by default, accessible everywhere, and effortless to customize
-                    for your next big idea.
-                </p>
-
-                <div class="hero-actions">
-                    <a class="btn btn-primary" href="#cta" id="cta">
-                        Start free trial
-                        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M4 10h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </a>
-                    <a class="btn btn-ghost" href="#demo">
-                        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M8 5.5v9l7-4.5-7-4.5Z" fill="currentColor" />
-                        </svg>
-                        Watch demo
-                    </a>
+                <p class="eyebrow">New • Launching soon</p>
+                <h1 class="hero-title">Build something remarkable, faster.</h1>
+                <p class="hero-subtitle">A focused toolkit that helps small teams ship beautiful, accessible landing pages without the overhead.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="#contact">Start free trial</a>
+                    <a class="btn btn-ghost" href="#features">Watch demo</a>
                 </div>
+            </div>
+        </section>
 
-                <ul class="hero-meta" aria-label="Highlights">
-                    <li class="meta-item">
-                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        No credit card required
+        <!-- Features section (USER-971000) -->
+        <section class="features" id="features" aria-labelledby="features-heading">
+            <div class="container">
+                <header class="features-header">
+                    <p class="eyebrow">Features</p>
+                    <h2 class="features-title" id="features-heading">Everything you need to launch with confidence</h2>
+                    <p class="features-subtitle">A carefully crafted set of capabilities designed to take you from idea to live page in record time — without sacrificing polish or accessibility.</p>
+                </header>
+
+                <ul class="features-grid" role="list">
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Lightning fast</h3>
+                        <p class="feature-description">Optimized, lean output that loads in a heartbeat and keeps visitors engaged from the first paint.</p>
                     </li>
-                    <li class="meta-item">
-                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        Free 14-day trial
+
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 7v5l3 2" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Ship in minutes</h3>
+                        <p class="feature-description">Pre-built sections, sensible defaults, and a streamlined workflow so you can publish today, not next quarter.</p>
                     </li>
-                    <li class="meta-item">
-                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        Cancel anytime
+
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Accessible by default</h3>
+                        <p class="feature-description">Semantic HTML, keyboard-friendly interactions, and contrast-safe colors so everyone can use what you build.</p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Responsive layouts</h3>
+                        <p class="feature-description">Fluid grids and breakpoints that look intentional from a small phone all the way up to a wide desktop monitor.</p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16v6H4z" />
+                                <path d="M4 14h10v6H4z" />
+                                <path d="M18 14h2v6h-2z" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Composable sections</h3>
+                        <p class="feature-description">Hero, features, contact — mix and match proven blocks to assemble the exact page you need.</p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 12a9 9 0 1 1-3.5-7.1" />
+                                <path d="M21 4v5h-5" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-title">Built to iterate</h3>
+                        <p class="feature-description">Clean, well-named structure makes it easy to tweak copy, swap visuals, and evolve the page as your product grows.</p>
                     </li>
                 </ul>
             </div>
         </section>
+
+        <!-- Contact section (USER-889000) -->
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 class="contact-title" id="contact-heading">Get in touch</h2>
+                <p class="contact-subtitle">Have a question or want to work together? Drop us a message.</p>
+                <form class="contact-form" id="contact-form" novalidate>
+                    <div class="form-row">
+                        <label class="form-label" for="contact-name">Name</label>
+                        <input class="form-input" id="contact-name" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error" />
+                        <p class="form-error" id="contact-name-error" role="alert"></p>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="contact-email">Email</label>
+                        <input class="form-input" id="contact-email" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error" />
+                        <p class="form-error" id="contact-email-error" role="alert"></p>
+                    </div>
+                    <div class="form-row">
+                        <label class="form-label" for="contact-message">Message</label>
+                        <textarea class="form-input form-textarea" id="contact-message" name="message" rows="5" required aria-describedby="contact-message-error"></textarea>
+                        <p class="form-error" id="contact-message-error" role="alert"></p>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-primary" type="submit">Send message</button>
+                        <p class="form-note" id="contact-form-status" role="status" aria-live="polite"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
 
-    <script src="app.js" defer></script>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="footer-copy">&copy; <span id="year"></span> LandingPage5. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/contact-form.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
