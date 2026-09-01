@@ -59,12 +59,16 @@
             </div>
         </section>
 
-        <!-- FEATURES (@helix:story USER-869000, USER-971000) -->
+        <!-- FEATURES (assembled from features-section.html — @helix:story USER-971000) -->
         <section id="features" class="features" aria-labelledby="features-title">
-            <div class="features__bg" aria-hidden="true"></div>
-            <div class="container features__container">
+            <div class="features__bg" aria-hidden="true">
+                <span class="features__orb features__orb--a"></span>
+                <span class="features__orb features__orb--b"></span>
+                <span class="features__grid-pattern" aria-hidden="true"></span>
+            </div>
+            <div class="container features__container features__inner">
                 <header class="features__header">
-                    <p class="eyebrow">Features</p>
+                    <p class="features__eyebrow">Features</p>
                     <h2 id="features-title" class="features__title">Everything you need to launch faster</h2>
                     <p class="features__lede">
                         A focused toolkit built for modern teams — clear, fast, and ready to ship on day one.
@@ -93,68 +97,79 @@
                         </span>
                         <h3 class="feature-card__title">Accessible by default</h3>
                         <p class="feature-card__desc">
-                            Semantic landmarks, focus styles, and ARIA labels baked in so everyone can use it.
+                            Semantic HTML, clear focus states, and color contrast tuned for every visitor.
                         </p>
                     </li>
 
                     <li class="feature-card">
                         <span class="feature-card__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
-                                <rect x="3" y="4" width="18" height="12" rx="2" />
-                                <path d="M8 20h8M12 16v4" />
+                                <rect x="3" y="4" width="18" height="14" rx="2" />
+                                <path d="M8 21h8" />
+                                <path d="M12 18v3" />
                             </svg>
                         </span>
                         <h3 class="feature-card__title">Fully responsive</h3>
                         <p class="feature-card__desc">
-                            A fluid layout that looks sharp from phone to ultrawide — no media-query spaghetti required.
+                            A fluid grid and balanced spacing look sharp from a phone to a wide desktop monitor.
+                        </p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <path d="M4 6h16" />
+                                <path d="M4 12h10" />
+                                <path d="M4 18h16" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-card__title">Zero build step</h3>
+                        <p class="feature-card__desc">
+                            Plain HTML, CSS, and vanilla JavaScript — drop it on any host and ship today.
+                        </p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M3 12h18" />
+                                <path d="M12 3a14 14 0 0 1 0 18" />
+                                <path d="M12 3a14 14 0 0 0 0 18" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-card__title">Modern typography</h3>
+                        <p class="feature-card__desc">
+                            A polished pairing of Space Grotesk and Inter keeps headlines crisp and body copy readable.
+                        </p>
+                    </li>
+
+                    <li class="feature-card">
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                                <path d="M12 2v4" />
+                                <path d="M12 18v4" />
+                                <path d="M4.93 4.93l2.83 2.83" />
+                                <path d="M16.24 16.24l2.83 2.83" />
+                                <path d="M2 12h4" />
+                                <path d="M18 12h4" />
+                                <path d="M4.93 19.07l2.83-2.83" />
+                                <path d="M16.24 7.76l2.83-2.83" />
+                            </svg>
+                        </span>
+                        <h3 class="feature-card__title">Ready to customize</h3>
+                        <p class="feature-card__desc">
+                            A clean structure and design tokens make it easy to adapt the page to your brand.
                         </p>
                     </li>
                 </ul>
-            </div>
-        </section>
-
-        <!-- CONTACT (assembled from contact-form — @helix:story USER-161000) -->
-        <section id="contact" class="contact" aria-labelledby="contact-title">
-            <div class="container contact__container">
-                <header class="contact__header">
-                    <p class="eyebrow">Contact</p>
-                    <h2 id="contact-title" class="contact__title">Let's build something great</h2>
-                    <p class="contact__lede">
-                        Send a quick note and we'll get back within one business day.
-                    </p>
-                </header>
-
-                <form class="contact-form" novalidate>
-                    <div class="contact-form__field">
-                        <label class="contact-form__label" for="cf-name">Name</label>
-                        <input class="contact-form__input" id="cf-name" name="name" type="text" autocomplete="name" required aria-describedby="cf-name-error" />
-                        <p class="contact-form__error" id="cf-name-error" role="alert"></p>
-                    </div>
-
-                    <div class="contact-form__field">
-                        <label class="contact-form__label" for="cf-email">Email</label>
-                        <input class="contact-form__input" id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-error" />
-                        <p class="contact-form__error" id="cf-email-error" role="alert"></p>
-                    </div>
-
-                    <div class="contact-form__field">
-                        <label class="contact-form__label" for="cf-message">Message</label>
-                        <textarea class="contact-form__input contact-form__input--textarea" id="cf-message" name="message" rows="5" required aria-describedby="cf-message-error"></textarea>
-                        <p class="contact-form__error" id="cf-message-error" role="alert"></p>
-                    </div>
-
-                    <div class="contact-form__actions">
-                        <button class="btn btn--primary contact-form__submit" type="submit">Send message</button>
-                        <p class="contact-form__status" role="status" aria-live="polite"></p>
-                    </div>
-                </form>
             </div>
         </section>
     </main>
 
     <footer class="site-footer">
         <div class="container site-footer__inner">
-            <p class="site-footer__copy">&copy; <span id="copyright-year">—</span> LandingPage5. All rights reserved.</p>
+            <p class="site-footer__copy">© <span id="year">2025</span> LandingPage5. Built with semantic HTML, modern CSS, and vanilla JavaScript.</p>
             <nav class="site-footer__nav" aria-label="Footer">
                 <a class="site-footer__link" href="#features">Features</a>
                 <a class="site-footer__link" href="#contact">Contact</a>
