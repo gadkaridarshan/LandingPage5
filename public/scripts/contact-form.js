@@ -1,180 +1,287 @@
-/* helix: public/scripts/contact-form.js */
 /**
- * Contact form behavior:
- * - Inline client-side validation with error messages.
- * - Success / error states rendered into an aria-live status region.
- * - Simulated async submit (no backend in this template) so the UX is
- *   fully verifiable end-to-end in the browser.
+ * @helix:story USER-889000
+ * Contact form section — inline client-side validation and non-network
+ * submission handler stub.
+ *
+ * Provides:
+ *   • Per-field validation (required + email format)
+ *   • Accessible inline error messaging (aria-invalid + aria-describedby)
+ *   • Submit handler stub (no network) with success/failure feedback
+ *   • Live validation on blur + clear-on-input for good UX
  */
 (function () {
     'use strict';
 
+    var EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     var form = document.getElementById('contact-form');
-    if (!form) return;
+    if (!form) {
+        return;
+    }
+
+    /**
+     * Field configuration: id of input, id of error message element,
+     * label text, and validator that returns an error message or ''.
+     */
+    var fields = [
+        {
+            id: 'contact-name',
+            errorId: 'contact-name-error',
+            label: 'Name',
+            validate: function (value) {
+                var trimmed = (value || '').trim();
+                if (!trimmed) {
+                    return 'Please enter your name.';
+                }
+                if (trimmed.length < 2) {
+                    return 'Name must be at least 2 characters.';
+                }
+                return '';
+            }
+        },
+        {
+            id: 'contact-email',
+            errorId: 'contact-email-error',
+            label: 'Email',
+            validate: function (value) {
+                var trimmed = (value || '').trim();
+                if (!trimmed) {
+                    return 'Please enter your email address.';
+                }
+                if (trimmed.length > 254) {
+                    return 'Email is too long.';
+                }
+                if (!EMAIL_PATTERN.test(trimmed)) {
+                    return 'Please enter a valid email address (e.g. you@example.com).';
+                }
+                return '';
+            }
+        },
+        {
+            id: 'contact-message',
+            errorId: 'contact-message-error',
+            label: 'Message',
+            validate: function (value) {
+                var trimmed = (value || '').trim();
+                if (!trimmed) {
+                    return 'Please enter a message.';
+                }
+                if (trimmed.length < 10) {
+                    return 'Message must be at least 10 characters.';
+                }
+                return '';
+            }
+        }
+    ];
 
     var statusEl = document.getElementById('contact-form-status');
-    var submitBtn = document.getElementById('contact-submit');
-    var fields = {
-        name: document.getElementById('contact-name'),
-        email: document.getElementById('contact-email'),
-        message: document.getElementById('contact-message')
-    };
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var defaultBtnLabel = submitBtn ? submitBtn.textContent : 'Send message';
 
-    var errors = {
-        name: document.getElementById('contact-name-error'),
-        email: document.getElementById('contact-email-error'),
-        message: document.getElementById('contact-message-error')
-    };
-
-    // RFC 5322-lite — good enough for client-side guard rails.
-    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-    function setError(field, message) {
-        var input = fields[field];
-        var errEl = errors[field];
-        if (!input || !errEl) return;
-        if (message) {
-            input.setAttribute('aria-invalid', 'true');
-            errEl.textContent = message;
-        } else {
-            input.removeAttribute('aria-invalid');
-            errEl.textContent = '';
-        }
-    }
-
-    function validateField(field) {
-        var value = (fields[field].value || '').trim();
-
-        if (!value) {
-            setError(field, 'This field is required.');
-            return false;
+    /**
+     * Attach validation + accessibility wiring for a single field.
+     */
+    fields.forEach(function (field) {
+        var input = document.getElementById(field.id);
+        var errorEl = document.getElementById(field.errorId);
+        if (!input) {
+            return;
         }
 
-        if (field === 'name') {
-            if (value.length < 2) {
-                setError(field, 'Please enter at least 2 characters.');
-                return false;
-            }
-            if (value.length > 80) {
-                setError(field, 'Name is too long (max 80 characters).');
-                return false;
-            }
+        // Ensure the input references its error message for screen readers.
+        var describedBy = input.getAttribute('aria-describedby');
+        if (errorEl && (!describedBy || describedBy.indexOf(field.errorId) === -1)) {
+            var next = describedBy ? describedBy + ' ' : '';
+            input.setAttribute('aria-describedby', next + field.errorId);
         }
 
-        if (field === 'email') {
-            if (value.length > 120) {
-                setError(field, 'Email is too long (max 120 characters).');
-                return false;
+        // Validate on blur — only show error if the field has been touched.
+        input.addEventListener('blur', function () {
+            if (input.dataset.touched === 'true') {
+                validateField(field);
+            } else {
+                input.dataset.touched = 'true';
             }
-            if (!EMAIL_RE.test(value)) {
-                setError(field, 'Please enter a valid email address.');
-                return false;
-            }
-        }
-
-        if (field === 'message') {
-            if (value.length < 10) {
-                setError(field, 'Message must be at least 10 characters.');
-                return false;
-            }
-            if (value.length > 2000) {
-                setError(field, 'Message is too long (max 2000 characters).');
-                return false;
-            }
-        }
-
-        setError(field, '');
-        return true;
-    }
-
-    function validateAll() {
-        var ok = true;
-        Object.keys(fields).forEach(function (field) {
-            if (!validateField(field)) ok = false;
         });
-        return ok;
-    }
 
-    function clearStatus() {
-        if (!statusEl) return;
-        statusEl.removeAttribute('data-state');
-        statusEl.innerHTML = '';
-    }
-
-    function setStatus(state, message) {
-        if (!statusEl) return;
-        var iconChar = state === 'success' ? '✓' : '!';
-        statusEl.setAttribute('data-state', state);
-        statusEl.innerHTML =
-            '<span class="form-status-icon" aria-hidden="true">' + iconChar + '</span>' +
-            '<p class="form-status-text">' + message + '</p>';
-    }
-
-    function setLoading(loading) {
-        if (!submitBtn) return;
-        if (loading) {
-            submitBtn.setAttribute('data-loading', 'true');
-            submitBtn.setAttribute('disabled', 'disabled');
-        } else {
-            submitBtn.removeAttribute('data-loading');
-            submitBtn.removeAttribute('disabled');
-        }
-    }
-
-    // Live-clear errors as the user fixes them.
-    Object.keys(fields).forEach(function (field) {
-        var input = fields[field];
-        if (!input) return;
+        // Clear the error as the user fixes the issue.
         input.addEventListener('input', function () {
             if (input.getAttribute('aria-invalid') === 'true') {
-                validateField(field);
-            }
-            clearStatus();
-        });
-        input.addEventListener('blur', function () {
-            if (input.value.trim().length > 0) {
                 validateField(field);
             }
         });
     });
 
-    form.addEventListener('submit', function (event) {
+    /**
+     * Validate one field and reflect the result in the DOM + ARIA.
+     * Returns true when valid.
+     */
+    function validateField(field) {
+        var input = document.getElementById(field.id);
+        var errorEl = document.getElementById(field.errorId);
+        if (!input) {
+            return true;
+        }
+        var message = field.validate(input.value);
+        if (message) {
+            input.setAttribute('aria-invalid', 'true');
+            if (errorEl) {
+                errorEl.textContent = message;
+                errorEl.hidden = false;
+            }
+            return false;
+        }
+        input.removeAttribute('aria-invalid');
+        if (errorEl) {
+            errorEl.textContent = '';
+            errorEl.hidden = true;
+        }
+        return true;
+    }
+
+    /**
+     * Validate every configured field. Returns true when all valid.
+     */
+    function validateAll() {
+        var allValid = true;
+        fields.forEach(function (field) {
+            var input = document.getElementById(field.id);
+            if (input) {
+                input.dataset.touched = 'true';
+            }
+            if (!validateField(field)) {
+                allValid = false;
+            }
+        });
+        return allValid;
+    }
+
+    /**
+     * Reset the entire form to its pristine state.
+     */
+    function resetForm() {
+        fields.forEach(function (field) {
+            var input = document.getElementById(field.id);
+            var errorEl = document.getElementById(field.errorId);
+            if (input) {
+                input.removeAttribute('aria-invalid');
+                input.dataset.touched = 'false';
+            }
+            if (errorEl) {
+                errorEl.textContent = '';
+                errorEl.hidden = true;
+            }
+        });
+        if (statusEl) {
+            statusEl.textContent = '';
+            statusEl.className = 'form-status';
+            statusEl.hidden = true;
+        }
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = defaultBtnLabel;
+        }
+    }
+
+    /**
+     * Announce a status update to assistive tech and visually.
+     */
+    function setStatus(message, kind) {
+        if (!statusEl) {
+            return;
+        }
+        statusEl.textContent = message;
+        statusEl.className = 'form-status form-status--' + (kind || 'info');
+        statusEl.hidden = !message;
+        // Re-announce for screen readers on repeated identical messages.
+        statusEl.setAttribute('aria-live', 'polite');
+    }
+
+    /**
+     * Submit handler stub. Validates inputs, simulates a non-network
+     * send, then resets the form so the visitor can send another message.
+     */
+    function handleSubmit(event) {
         event.preventDefault();
-        clearStatus();
+        setStatus('', 'info');
 
         if (!validateAll()) {
-            setStatus('error', 'Please fix the highlighted fields and try again.');
+            setStatus('Please fix the highlighted fields and try again.', 'error');
             // Focus the first invalid field for keyboard users.
             var firstInvalid = form.querySelector('[aria-invalid="true"]');
-            if (firstInvalid && typeof firstInvalid.focus === 'function') {
+            if (firstInvalid) {
                 firstInvalid.focus();
             }
             return;
         }
 
-        setLoading(true);
+        // Collect payload (non-network — kept in memory only).
+        var payload = {
+            name: form.elements['name'] ? form.elements['name'].value.trim() : '',
+            email: form.elements['email'] ? form.elements['email'].value.trim() : '',
+            message: form.elements['message'] ? form.elements['message'].value.trim() : '',
+            submittedAt: new Date().toISOString()
+        };
 
-        // Simulated network call. Replace with a real fetch() to your endpoint.
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending…';
+        }
+
+        // Non-network submission stub. Replace with a real fetch() / XHR
+        // call when wiring up a backend. Errors are simulated ~10% of the
+        // time so the failure path is exercised during development.
         window.setTimeout(function () {
-            setLoading(false);
-
-            // For demonstration: randomize success vs. transient failure
-            // so both states are easy to verify. A real backend would
-            // return a real status here.
-            var succeed = Math.random() > 0.15;
-            if (succeed) {
+            var simulatedFailure = Math.random() < 0.1;
+            if (simulatedFailure) {
                 setStatus(
-                    'success',
-                    "Thanks, " + fields.name.value.trim().split(' ')[0] +
-                    "! Your message has been sent. We'll get back to you within one business day."
+                    "We couldn't send your message just now. Please try again in a moment.",
+                    'error'
                 );
-                form.reset();
-            } else {
-                setStatus(
-                    'error',
-                    "Something went wrong on our end. Please try again in a moment."
-                );
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = defaultBtnLabel;
+                }
+                return;
             }
-        }, 900);
-    });
+
+            // For debugging / dev visibility only. Safe to leave on.
+            if (window.console && typeof window.console.info === 'function') {
+                window.console.info('[contact-form] submission stub payload:', payload);
+            }
+
+            setStatus(
+                "Thanks, " + payload.name + "! Your message is on its way — we'll be in touch soon.",
+                'success'
+            );
+            form.reset();
+            fields.forEach(function (field) {
+                var input = document.getElementById(field.id);
+                if (input) {
+                    input.dataset.touched = 'false';
+                    input.removeAttribute('aria-invalid');
+                }
+                var errorEl = document.getElementById(field.errorId);
+                if (errorEl) {
+                    errorEl.textContent = '';
+                    errorEl.hidden = true;
+                }
+            });
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.textContent = defaultBtnLabel;
+            }
+        }, 450);
+    }
+
+    form.addEventListener('submit', handleSubmit);
+
+    // Reset button (if present) clears everything.
+    var resetBtn = form.querySelector('button[type="reset"]');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+            // Defer so default reset clears inputs first.
+            window.setTimeout(resetForm, 0);
+        });
+    }
 })();
