@@ -1,6 +1,5 @@
 # Card Inventory
 
-- Sep 1, 2026, 6:58:06 PM CDT | USER-161000 | done | development | Assemble contact form into index
 - Sep 1, 2026, 6:58:04 PM CDT | USER-455000 | done | development | Assemble hero section into index
 - Sep 1, 2026, 6:56:28 PM CDT | USER-107000 | done | development | Build hero section
 - Sep 1, 2026, 6:56:00 PM CDT | USER-754000 | done | development | Compose features section landing page
@@ -17,4 +16,5 @@
 - — | USER-532000 | in_progress | development | Build contact form section
 - — | USER-527000 | done | development | Populate index hero section
 - — | USER-294000 | in_progress | development | Build features section markup
+- — | USER-161000 | in_progress | development | Assemble contact form into index
 - — | USER-114000 | done | development | Hero section landing page
