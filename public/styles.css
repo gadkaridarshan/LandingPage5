@@ -1,9 +1,8 @@
-## Deliverables from this board
-- **Hero section** — Headline, subhead, primary CTA, layered gradient background, accessible typography hierarchy, and responsive layout.
-- **Features section** — Three-up feature grid with icon, title, and description per item, consistent spacing, and a complementary background treatment.
-- **Contact form section** — Labeled name / email / message inputs, inline client-side validation with accessible error messaging, polished form styling, and a non-network submit handler stub.
+/* =========================================================
+   LandingPage5 — Optional legacy aggregate stylesheet
+   Imports shared design tokens. Individual section styles
+   (hero, features, contact-form) are loaded separately for
+   independent shippability.
+   ========================================================= */
 
-## Helix quality bar
-- Use professional, readable typography (modern web fonts, clear hierarchy, accessible sizes).
-- Use a polished professional background (subtle gradients, textures, or patterns — not a flat unfinished page).
-- Follow language and framework best practices: clear structure, naming, error handling, security basics, and maintainable code.
+@import url('./styles/main.css');
