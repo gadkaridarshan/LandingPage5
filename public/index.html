@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LaunchPad — ship your product faster with a polished, conversion-focused landing page template." />
+  <meta name="theme-color" content="#0b1020" />
+  <title>LaunchPad — Ship Your Product Faster</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- @helix:story USER-87000 — Hero section -->
+  <header class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__bg-gradient"></div>
+      <div class="hero__bg-grid"></div>
+      <div class="hero__bg-glow hero__bg-glow--a"></div>
+      <div class="hero__bg-glow hero__bg-glow--b"></div>
+    </div>
+
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="#hero" aria-label="LaunchPad home">
+        <span class="nav__brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12l8-8 8 8" />
+            <path d="M6 10v10h12V10" />
+          </svg>
+        </span>
+        <span class="nav__brand-name">LaunchPad</span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav__cta" href="#contact">Get Started</a>
+    </nav>
+
+    <div class="hero__inner">
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+        New • v2.0 is here
+      </span>
+
+      <h1 class="hero__title" id="hero-title">
+        Ship your landing page <span class="hero__title-accent">in days, not months</span>
+      </h1>
+
+      <p class="hero__subtitle">
+        LaunchPad gives founders and marketers a polished, conversion-ready foundation
+        so you can focus on the story — not the boilerplate.
+      </p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#contact" data-cta="primary">
+          Start free trial
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="M13 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a class="btn btn--ghost" href="#features">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M10 8.5l6 3.5-6 3.5z" fill="currentColor" stroke="none" />
+          </svg>
+          Watch demo
+        </a>
+      </div>
+
+      <ul class="hero__proof" role="list" aria-label="Customer proof points">
+        <li>
+          <strong>10k+</strong>
+          <span>teams onboard</span>
+        </li>
+        <li>
+          <strong>4.9★</strong>
+          <span>average rating</span>
+        </li>
+        <li>
+          <strong>99.99%</strong>
+          <span>uptime SLA</span>
+        </li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Downstream sections (Features, Contact) are owned by other cards. -->
+  </main>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
