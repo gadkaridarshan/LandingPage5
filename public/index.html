@@ -22,130 +22,72 @@
             </a>
             <nav class="site-nav" aria-label="Primary">
                 <a href="#features">Features</a>
+                <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <a class="header-cta" href="#cta">Get started</a>
         </div>
     </header>
 
     <main id="main">
-        <!-- Hero section (USER-87000 placeholder) -->
-        <section class="hero" id="top">
+        <!-- @helix:story USER-114000 — Hero section landing page -->
+        <section class="hero" id="top" aria-labelledby="hero-title">
             <div class="container hero-inner">
-                <p class="eyebrow">New • Launching soon</p>
-                <h1 class="hero-title">Build something remarkable, faster.</h1>
-                <p class="hero-subtitle">A focused toolkit that helps small teams ship beautiful, accessible landing pages without the overhead.</p>
-                <div class="hero-cta">
-                    <a class="btn btn-primary" href="#contact">Get in touch</a>
-                    <a class="btn btn-ghost" href="#features">See features</a>
-                </div>
-            </div>
-        </section>
+                <span class="hero-eyebrow">
+                    <span class="dot" aria-hidden="true"></span>
+                    New: AI-powered workflows are here
+                </span>
 
-        <!-- Features section (USER-739000 placeholder) -->
-        <section class="features" id="features" aria-labelledby="features-title">
-            <div class="container">
-                <header class="section-header">
-                    <h2 id="features-title">Everything you need to launch</h2>
-                    <p>Designed for speed, accessibility, and a polished first impression.</p>
-                </header>
-                <div class="feature-grid">
-                    <article class="feature-card">
-                        <h3>Accessible by default</h3>
-                        <p>Semantic HTML, focus states, and keyboard-friendly controls throughout.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3>Modern typography</h3>
-                        <p>Inter and Plus Jakarta Sans deliver crisp, readable hierarchy on any screen.</p>
-                    </article>
-                    <article class="feature-card">
-                        <h3>Validated forms</h3>
-                        <p>Inline, accessible validation with clear error messages that help visitors succeed.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
+                <h1 class="hero-title" id="hero-title">
+                    Build something <span class="accent">remarkable</span>,<br />
+                    ship it in minutes.
+                </h1>
 
-        <!-- Contact form section (USER-889000) -->
-        <section class="contact" id="contact" aria-labelledby="contact-title">
-            <div class="container contact-inner">
-                <div class="contact-copy">
-                    <p class="eyebrow">Contact</p>
-                    <h2 id="contact-title">Let's talk.</h2>
-                    <p class="contact-lede">Have a question, an idea, or a project in mind? Send us a message and we'll get back to you soon.</p>
-                    <ul class="contact-meta" role="list">
-                        <li><strong>Email</strong><span>hello@landingpage5.example</span></li>
-                        <li><strong>Response time</strong><span>Within 1 business day</span></li>
-                    </ul>
+                <p class="hero-subtitle">
+                    LandingPage5 is the fastest way to launch a polished, conversion-focused
+                    page. Beautiful by default, accessible everywhere, and effortless to customize
+                    for your next big idea.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#cta" id="cta">
+                        Start free trial
+                        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="M4 10h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a class="btn btn-ghost" href="#demo">
+                        <svg class="btn-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="M8 5.5v9l7-4.5-7-4.5Z" fill="currentColor" />
+                        </svg>
+                        Watch demo
+                    </a>
                 </div>
 
-                <form class="contact-form" id="contact-form" novalidate aria-describedby="contact-form-status">
-                    <div class="form-field">
-                        <label for="contact-name">Name <span class="required" aria-hidden="true">*</span></label>
-                        <input
-                            type="text"
-                            id="contact-name"
-                            name="name"
-                            autocomplete="name"
-                            required
-                            aria-required="true"
-                            aria-describedby="contact-name-error"
-                            maxlength="100"
-                        />
-                        <p class="field-error" id="contact-name-error" role="alert" aria-live="polite"></p>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="contact-email">Email <span class="required" aria-hidden="true">*</span></label>
-                        <input
-                            type="email"
-                            id="contact-email"
-                            name="email"
-                            autocomplete="email"
-                            required
-                            aria-required="true"
-                            aria-describedby="contact-email-error"
-                            maxlength="254"
-                        />
-                        <p class="field-error" id="contact-email-error" role="alert" aria-live="polite"></p>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="contact-message">Message <span class="required" aria-hidden="true">*</span></label>
-                        <textarea
-                            id="contact-message"
-                            name="message"
-                            rows="5"
-                            required
-                            aria-required="true"
-                            aria-describedby="contact-message-error"
-                            maxlength="2000"
-                        ></textarea>
-                        <p class="field-error" id="contact-message-error" role="alert" aria-live="polite"></p>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary" id="contact-submit">Send message</button>
-                        <p class="form-status" id="contact-form-status" role="status" aria-live="polite"></p>
-                    </div>
-                </form>
+                <ul class="hero-meta" aria-label="Highlights">
+                    <li class="meta-item">
+                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        No credit card required
+                    </li>
+                    <li class="meta-item">
+                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Free 14-day trial
+                    </li>
+                    <li class="meta-item">
+                        <svg class="check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                            <path d="m5 10 3.5 3.5L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Cancel anytime
+                    </li>
+                </ul>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> LandingPage5. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="scripts/contact-form.js" defer></script>
-    <script>
-        (function () {
-            var yearEl = document.getElementById('current-year');
-            if (yearEl) {
-                yearEl.textContent = String(new Date().getFullYear());
-            }
-        })();
-    </script>
+    <script src="app.js" defer></script>
 </body>
 </html>
