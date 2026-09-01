@@ -3,8 +3,9 @@
    Card: USER-114000 (Hero section landing page)
    Card: USER-971000 (Features section landing page)
    Card: USER-689000 / USER-889000 (Contact form section)
+   Shared helpers: container, btn, site-header, site-footer
 */
-
+:root {
 :root {
     /* Color palette */
     --color-bg: #0b0d17;
@@ -136,11 +137,12 @@ a {
     align-items: center;
     backdrop-filter: saturate(140%) blur(14px);
     -webkit-backdrop-filter: saturate(140%) blur(14px);
-    background: rgba(11, 13, 23, 0.65);
-    border-bottom: 1px solid var(--color-border);
+    --shadow-lg: 0 24px 60px rgba(8, 10, 24, 0.55);
 }
-
-.header-inner {
+/* ---------- Reset / base ---------- */
+*,
+*::before,
+*::after {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -150,12 +152,151 @@ a {
 
 .brand {
     display: inline-flex;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+/* ---------- Shared layout helpers ---------- */
+.container {
+    width: 100%;
+    max-width: 1180px;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 4vw, 40px);
+    box-sizing: border-box;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    font: 600 0.9375rem/1 var(--font-body);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-accent-2);
+    outline-offset: 3px;
+}
+
+.btn--primary {
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-3));
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35);
+}
+
+.btn--primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(124, 92, 255, 0.45);
+}
+
+.btn--ghost {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--color-text);
+    border-color: var(--color-border-strong);
+}
+
+.btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- Site header ---------- */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(14px);
+    background: rgba(11, 13, 23, 0.7);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 14px;
+}
+
+.site-header__brand {
+    display: inline-flex;
     align-items: center;
     gap: 10px;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.1rem;
-    letter-spacing: -0.01em;
+    color: var(--color-text);
+    font: 700 1rem/1 var(--font-display);
+    text-decoration: none;
+}
+
+.site-header__brand-mark {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2));
+    box-shadow: 0 4px 14px rgba(124, 92, 255, 0.5);
+}
+
+.site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.site-header__nav a {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font: 500 0.9375rem/1 var(--font-body);
+}
+
+.site-header__nav a:hover {
+    color: var(--color-text);
+}
+
+.site-header__cta {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(124, 92, 255, 0.16);
+    color: var(--color-text) !important;
+    border: 1px solid rgba(124, 92, 255, 0.4);
+}
+
+/* ---------- Site footer ---------- */
+.site-footer {
+    border-top: 1px solid var(--color-border);
+    padding-block: 28px;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+}
+
+.site-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.site-footer__back {
+    color: var(--color-text-muted);
+    text-decoration: none;
+}
+
+.site-footer__back:hover {
+    color: var(--color-text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn,
+    .btn:hover {
+        transition: none;
+        transform: none;
+    }
 }
 
 .brand-mark {
