@@ -3,38 +3,36 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="LandingPage5 — A polished marketing landing page featuring a hero, a features showcase, and a contact form." />
-    <title>LandingPage5 — Build, launch, and grow your product</title>
+    <meta name="description" content="LandingPage5 — a modern marketing landing page showcasing a hero, features, and an accessible contact form." />
+    <title>LandingPage5 — Modern Marketing Landing Page</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
         rel="stylesheet"
     />
 
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/contact-form.css" />
-    <link rel="stylesheet" href="styles/features.css" />
 </head>
 <body>
-    <!-- @helix:story USER-527000 -->
-    <header class="site-header" aria-label="Site header">
+    <!-- @helix:story USER-527000 — Hero section -->
+    <header class="site-header">
         <div class="container site-header__inner">
-            <a href="#" class="site-header__brand" aria-label="LandingPage5 home">
-                <span class="site-header__brand-mark" aria-hidden="true"></span>
-                <span class="site-header__brand-text">LandingPage5</span>
+            <a href="#top" class="brand" aria-label="LandingPage5 home">
+                <span class="brand__mark" aria-hidden="true"></span>
+                <span class="brand__name">LandingPage5</span>
             </a>
-            <nav class="site-header__nav" aria-label="Primary">
+            <nav class="site-nav" aria-label="Primary">
                 <a href="#features">Features</a>
                 <a href="#contact">Contact</a>
-                <a href="#contact" class="site-header__cta">Get started</a>
             </nav>
         </div>
     </header>
 
-    <main id="main">
-        <!-- @helix:story USER-527000 -->
+    <main id="top">
+        <!-- @helix:story USER-527000 — Hero section -->
         <section class="hero" aria-labelledby="hero-title">
             <div class="hero__bg" aria-hidden="true">
                 <div class="hero__glow hero__glow--a"></div>
@@ -45,229 +43,237 @@
 
             <div class="container hero__inner">
                 <p class="hero__eyebrow">
-                    <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-                    New · Launch v5
+                    <span class="hero__dot" aria-hidden="true"></span>
+                    New • Launching soon
                 </p>
+
                 <h1 id="hero-title" class="hero__title">
-                    Ship a landing page that
-                    <span class="hero__title-accent">earns attention</span>
+                    Ship a landing page
+                    <span class="hero__title-accent">that converts.</span>
                 </h1>
+
                 <p class="hero__subhead">
-                    A focused toolkit for marketing teams who care about clarity, speed, and accessibility.
-                    Launch in minutes, iterate with confidence, and convert visitors into customers.
+                    A polished, accessible marketing site with a clear hero, scannable
+                    features, and a friendly contact form — built with semantic HTML,
+                    a shared design system, and zero build steps.
                 </p>
+
                 <div class="hero__actions">
-                    <a href="#contact" class="btn btn--primary">Start free trial</a>
+                    <a href="#contact" class="btn btn--primary">
+                        Get in touch
+                        <span aria-hidden="true" class="btn__arrow">→</span>
+                    </a>
                     <a href="#features" class="btn btn--ghost">See features</a>
                 </div>
 
-                <ul class="hero__metrics" aria-label="Highlights">
+                <ul class="hero__meta" aria-label="Highlights">
                     <li>
-                        <span class="hero__metric-value">3x</span>
-                        <span class="hero__metric-label">Faster launches</span>
+                        <strong>100%</strong>
+                        <span>Static &amp; fast</span>
                     </li>
                     <li>
-                        <span class="hero__metric-value">98</span>
-                        <span class="hero__metric-label">Lighthouse score</span>
+                        <strong>A11y</strong>
+                        <span>Keyboard &amp; SR ready</span>
                     </li>
                     <li>
-                        <span class="hero__metric-value">A11y</span>
-                        <span class="hero__metric-label">WCAG 2.1 AA</span>
+                        <strong>0</strong>
+                        <span>Build dependencies</span>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- @helix:story USER-438000 -->
+        <!-- @helix:story USER-438000 — Features section -->
         <section id="features" class="features" aria-labelledby="features-title">
-            <div class="features__bg" aria-hidden="true">
-                <div class="features__glow features__glow--a"></div>
-                <div class="features__glow features__glow--b"></div>
-            </div>
-
             <div class="container">
-                <header class="features__header">
-                    <p class="features__eyebrow">Why teams pick LandingPage5</p>
-                    <h2 id="features-title" class="features__title">
-                        Everything you need to launch, in one focused toolkit
+                <header class="section-header">
+                    <p class="section-header__eyebrow">Why LandingPage5</p>
+                    <h2 id="features-title" class="section-header__title">
+                        Everything you need to launch with confidence
                     </h2>
-                    <p class="features__subhead">
-                        A small, sharp set of capabilities that covers the essentials of a modern marketing site —
-                        so your team can ship without juggling five different tools.
+                    <p class="section-header__lede">
+                        A focused set of building blocks designed to look great,
+                        load fast, and stay accessible.
                     </p>
                 </header>
 
-                <ul class="features__grid" role="list">
+                <ul class="feature-grid" role="list">
                     <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z" />
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" />
                             </svg>
-                        </div>
-                        <h3 class="feature-card__title">Built for speed</h3>
+                        </span>
+                        <h3 class="feature-card__title">Lightning fast</h3>
                         <p class="feature-card__desc">
-                            Lean markup, zero build step, and fonts that load instantly.
-                            Your visitors get a smooth experience on any device.
+                            Pure HTML, CSS, and vanilla JavaScript — no framework, no
+                            build step, no waiting.
                         </p>
                     </li>
 
                     <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 2a10 10 0 1 0 10 10" />
-                                <path d="M12 6v6l4 2" />
-                                <path d="M20 4v4h-4" />
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18" />
                             </svg>
-                        </div>
-                        <h3 class="feature-card__title">Launches in minutes</h3>
-                        <p class="feature-card__desc">
-                            Drop in your copy, point the form at your inbox, and you are live.
-                            No frameworks, no bundlers, no surprises.
-                        </p>
-                    </li>
-
-                    <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4Z" />
-                                <path d="m9 12 2 2 4-4" />
-                            </svg>
-                        </div>
+                        </span>
                         <h3 class="feature-card__title">Accessible by default</h3>
                         <p class="feature-card__desc">
-                            Semantic markup, visible focus states, and WCAG-friendly contrast.
-                            Every visitor gets the same clear path forward.
+                            Semantic structure, visible focus, proper labels, and
+                            <code>aria-live</code> status messaging out of the box.
                         </p>
                     </li>
 
                     <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="3" y="4" width="18" height="14" rx="2" />
-                                <path d="M3 10h18" />
-                                <path d="M8 14h4" />
+                        <span class="feature-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z" />
                             </svg>
-                        </div>
-                        <h3 class="feature-card__title">Forms that convert</h3>
+                        </span>
+                        <h3 class="feature-card__title">Design system ready</h3>
                         <p class="feature-card__desc">
-                            Inline validation, accessible error messaging, and graceful fallbacks —
-                                so more visitors actually become leads.
-                        </p>
-                    </li>
-
-                    <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="9" />
-                                <path d="M3 12h18" />
-                                <path d="M12 3a14 14 0 0 1 0 18" />
-                                <path d="M12 3a14 14 0 0 0 0 18" />
-                            </svg>
-                        </div>
-                        <h3 class="feature-card__title">Responsive everywhere</h3>
-                        <p class="feature-card__desc">
-                            A grid that adapts cleanly from phone to ultrawide.
-                            Typography and spacing scale with the viewport.
-                        </p>
-                    </li>
-
-                    <li class="feature-card">
-                        <div class="feature-card__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16v6H4z" />
-                                <path d="M4 14h16v6H4z" />
-                                <path d="M8 7h.01" />
-                                <path d="M8 17h.01" />
-                            </svg>
-                        </div>
-                        <h3 class="feature-card__title">Token-driven design</h3>
-                        <p class="feature-card__desc">
-                            Colors, radii, and shadows come from a single design-system file.
-                            Rebrand in minutes, not days.
+                            Tokens for color, type, spacing, and shadows — easy to
+                            retheme and adapt to your brand.
                         </p>
                     </li>
                 </ul>
             </div>
         </section>
 
-        <!-- @helix:story USER-120000 -->
+        <!-- @helix:story USER-120000 — Contact section -->
         <section id="contact" class="contact" aria-labelledby="contact-title">
             <div class="container contact__inner">
                 <div class="contact__intro">
-                    <p class="contact__eyebrow">Get in touch</p>
-                    <h2 id="contact-title" class="contact__title">Tell us what you are building</h2>
-                    <p class="contact__subhead">
-                        Send a quick note and our team will reply within one business day.
-                        No pressure, no sales script — just a useful conversation.
+                    <p class="section-header__eyebrow">Get in touch</p>
+                    <h2 id="contact-title" class="section-header__title">
+                        Let's start a conversation
+                    </h2>
+                    <p class="section-header__lede">
+                        Have a question, a project idea, or just want to say hello?
+                        Send a message and we'll get back to you shortly.
                     </p>
-                    <ul class="contact__points" role="list">
-                        <li>One-business-day response time</li>
-                        <li>Talk to a real product specialist</li>
-                        <li>Bring a sketch, a spec, or just a question</li>
+
+                    <ul class="contact__info" aria-label="Contact information">
+                        <li class="contact__info-item">
+                            <span class="contact__info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 6h16v12H4z" />
+                                    <path d="m4 7 8 6 8-6" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="contact__info-label">Email</span>
+                                <a class="contact__info-value" href="mailto:hello@landingpage5.example">hello@landingpage5.example</a>
+                            </div>
+                        </li>
+                        <li class="contact__info-item">
+                            <span class="contact__info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="contact__info-label">Location</span>
+                                <span class="contact__info-value">Remote · Worldwide</span>
+                            </div>
+                        </li>
+                        <li class="contact__info-item">
+                            <span class="contact__info-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 7v5l3 2" />
+                                </svg>
+                            </span>
+                            <div>
+                                <span class="contact__info-label">Response time</span>
+                                <span class="contact__info-value">Within 1 business day</span>
+                            </div>
+                        </li>
                     </ul>
                 </div>
 
                 <form id="contact-form" class="contact-form" novalidate aria-describedby="contact-form-status">
-                    <div class="contact-form__field">
-                        <label for="contact-name" class="contact-form__label">Name</label>
-                        <input
-                            id="contact-name"
-                            name="name"
-                            type="text"
-                            class="contact-form__input"
-                            autocomplete="name"
-                            required
-                            aria-required="true"
-                            aria-describedby="contact-name-error"
-                        />
-                        <p id="contact-name-error" class="contact-form__error" role="alert" aria-live="polite"></p>
+                    <div class="contact-form__row">
+                        <div class="field">
+                            <label class="field__label" for="contact-name">Name</label>
+                            <input
+                                class="field__input"
+                                type="text"
+                                id="contact-name"
+                                name="name"
+                                autocomplete="name"
+                                required
+                                minlength="2"
+                                aria-required="true"
+                                aria-describedby="contact-name-error"
+                            />
+                            <p class="field__error" id="contact-name-error" role="alert" aria-live="polite"></p>
+                        </div>
+
+                        <div class="field">
+                            <label class="field__label" for="contact-email">Email</label>
+                            <input
+                                class="field__input"
+                                type="email"
+                                id="contact-email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                                aria-required="true"
+                                aria-describedby="contact-email-error"
+                            />
+                            <p class="field__error" id="contact-email-error" role="alert" aria-live="polite"></p>
+                        </div>
                     </div>
 
-                    <div class="contact-form__field">
-                        <label for="contact-email" class="contact-form__label">Email</label>
-                        <input
-                            id="contact-email"
-                            name="email"
-                            type="email"
-                            class="contact-form__input"
-                            autocomplete="email"
-                            required
-                            aria-required="true"
-                            aria-describedby="contact-email-error"
-                        />
-                        <p id="contact-email-error" class="contact-form__error" role="alert" aria-live="polite"></p>
-                    </div>
-
-                    <div class="contact-form__field">
-                        <label for="contact-message" class="contact-form__label">Message</label>
+                    <div class="field">
+                        <label class="field__label" for="contact-message">Message</label>
                         <textarea
+                            class="field__input field__input--textarea"
                             id="contact-message"
                             name="message"
-                            class="contact-form__input contact-form__textarea"
                             rows="5"
                             required
+                            minlength="10"
                             aria-required="true"
                             aria-describedby="contact-message-error"
+                            placeholder="Tell us a bit about what you're working on…"
                         ></textarea>
-                        <p id="contact-message-error" class="contact-form__error" role="alert" aria-live="polite"></p>
+                        <p class="field__error" id="contact-message-error" role="alert" aria-live="polite"></p>
                     </div>
 
-                    <button type="submit" class="btn btn--primary contact-form__submit">Send message</button>
-
-                    <p id="contact-form-status" class="contact-form__status" role="status" aria-live="polite"></p>
+                    <div class="contact-form__actions">
+                        <button type="submit" class="btn btn--primary contact-form__submit">
+                            Send message
+                            <span aria-hidden="true" class="btn__arrow">→</span>
+                        </button>
+                        <p
+                            id="contact-form-status"
+                            class="contact-form__status"
+                            role="status"
+                            aria-live="polite"
+                        ></p>
+                    </div>
                 </form>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer" aria-label="Site footer">
+    <footer class="site-footer">
         <div class="container site-footer__inner">
-            <p>&copy; <span id="year">2025</span> LandingPage5. Built with care.</p>
-            <a href="#main" class="site-footer__back">Back to top ↑</a>
+            <p>&copy; <span id="year">2025</span> LandingPage5. Built with semantic HTML, CSS, and vanilla JS.</p>
         </div>
     </footer>
 
     <script src="scripts/contact-form.js" defer></script>
-    <script src="app.js" defer></script>
+    <script>
+        // Tiny enhancement: keep the footer year current.
+        (function () {
+            var el = document.getElementById('year');
+            if (el) el.textContent = new Date().getFullYear();
+        })();
+    </script>
 </body>
 </html>
